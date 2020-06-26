@@ -1,8 +1,7 @@
 var foregroundImage = null;
 var backgroundImage = null;
 
-
-
+// initial global variable with uploaded image then display
 function upload(type) {
     if (type == 'foreground') {
         var imgcanvas = document.getElementById("foregroundCanvas");
@@ -16,13 +15,15 @@ function upload(type) {
         backgroundImage = new SimpleImage(fileinput);
         backgroundImage.drawTo(imgcanvas);
     }
-
 }
 
+// solve using global var images
 function solve() {
+    // if either image not uploaded alert error
     if (foregroundImage == null || backgroundImage == null) {
         alert("Please upload both images. If it still doesn't work then give it a minute to let the picutes load.");
     }
+    // check every pixel and replace if green else dont
     else {
         var output = new SimpleImage(foregroundImage.getWidth(), foregroundImage.getHeight());
         for (var pixel of foregroundImage.values()) {
@@ -39,11 +40,10 @@ function solve() {
         imgcanvas = document.getElementById("solutionCanvas");
         output.drawTo(imgcanvas);
     }
-
 }
 
-
-function demo() {    
+// initial global variable with demo images then display 
+function demo() {
     var imgcanvasForeground = document.getElementById("foregroundCanvas");
     var imgcanvasBackground = document.getElementById("backgroundCanvas");
     foregroundImage = new SimpleImage("test-fg.png");

@@ -1,6 +1,5 @@
 body {    
     background-color: whitesmoke;
-
 }
 
 .topheading {
@@ -21,12 +20,15 @@ canvas {
     background-color: white;
   }
 
-  .demoButton {
+.demoButton {
     border: none;
-    background-color: inherit;
-    padding: 14px 28px;
-    font-size: 16px;
+    background-color: whitesmoke;
+    padding: 0px 20px;
+    font-size: 14px;
     cursor: pointer;
-    display: inline-block;
     color: black;
-  }
+}
+
+.footer {
+    padding-bottom: 20px;
+}
